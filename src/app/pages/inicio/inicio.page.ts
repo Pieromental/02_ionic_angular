@@ -12,14 +12,29 @@ interface Componente{
 export class InicioPage implements OnInit {
   componentes:Componente[]=[
     {
-      icon:'american-football-outline',
+      icon:'arrow-up-outline',
       name:'Action Sheet',
       redirectTo:'/action-sheet'
     },
     {
-      icon:'logo-apple-appstore',
+      icon:'alert-circle-outline',
       name:'Alert',
       redirectTo:'/alert'
+    },
+    {
+      icon:'person-circle-outline',
+      name:'Avatar',
+      redirectTo:'/avatar'
+    },
+    {
+      icon:'heart-circle-outline',
+      name:'Buttons',
+      redirectTo:'/buttons'
+    },
+    {
+      icon:'card-outline',
+      name:'Cards',
+      redirectTo:'/card'
     }
 ];
   constructor() { }
