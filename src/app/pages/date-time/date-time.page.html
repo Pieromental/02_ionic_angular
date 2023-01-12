@@ -1,0 +1,82 @@
+<app-header titulo="DateTime"></app-header>
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Datos de Nacimiento</ion-label>
+    </ion-list-header>
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>Fecha de Nacimiento</ion-label>
+          <ion-note slot="end"></ion-note>
+        </ion-item>
+        <!-- Ya no se usa display-format , en su lugar se usa "presentation:" con los siguientes valores date, date-time, month, month-year, time, time-date, or year -->
+        <ion-datetime
+          id="datetime"
+          slot="content"
+          presentation="date"
+          (ionChange)="cambiar($event)"
+          [value]="fechaNaci.toISOString()"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>Min y Máx</ion-label>
+          <ion-note slot="end"></ion-note>
+        </ion-item>
+        <ion-datetime
+          slot="content"
+          min="2022-01-01"
+          max="2025-12-31"
+          display-format="YYYY-MM-DD"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>Años</ion-label>
+          <ion-note slot="end"></ion-note>
+        </ion-item>
+        <ion-datetime
+          slot="content"
+          presentation="year"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+    <ion-accordion-group>
+      <ion-accordion value="start">
+        <ion-item slot="header">
+          <ion-label>Custom Options</ion-label>
+          <ion-note slot="end"></ion-note>
+        </ion-item>
+        <ion-datetime
+          slot="content"
+          presentation="year"
+        ></ion-datetime>
+      </ion-accordion>
+    </ion-accordion-group>
+
+    <!-- <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-datetime
+        [value]="fechaNaci.toISOString()"
+        display-format="YYYY-MM-DD"
+        (ionChange)="cambiar($event)"
+      ></ion-datetime>
+    </ion-item> -->
+    <!-- <ion-list-header>
+      <ion-label>Restricciones</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Min y Max</ion-label>
+      <ion-datetime
+        display-format="YYYY-MM-DD"
+        min="2022-01-01"
+        max="2025-12-31"
+      ></ion-datetime>
+    </ion-item> -->
+  </ion-list>
+</ion-content>

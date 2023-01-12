@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">List-Reorder</ion-title>
+    <ion-button  (click)="ordenar=!ordenar" slot="end" fill="clear">
+      Ordenar
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-reorder-group [disabled]="ordenar" (ionItemReorder)="doReorder($event)">
+      <ion-item *ngFor="let item of personajes">
+        <ion-label>{{item}}</ion-label>
+        <ion-reorder slot="end">
+          <ion-icon name="repeat-outline"></ion-icon>
+        </ion-reorder>
+      </ion-item>
+    </ion-reorder-group>
+   
+  </ion-list>
+</ion-content>
